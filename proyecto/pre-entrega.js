@@ -5,35 +5,25 @@ let mensaje = 'Hola ' + usuario + ' ' + 'bienvenido/a a nuestro sitio web de cer
 console.log(mensaje);
 alert(mensaje);
 
-//Parte de selección de productos
-let productos = prompt('Coloque un número del 1 al 10, para seleccionar su producto');
-while (productos != 'ESC'){
-    switch (productos){
-        case '1':
-            alert('Se seleccionó platos');
-            break;
-        case '2':
-            alert('Tazas');
-            break;
-        case '3':
-            alert( 'Macetas');
-            break;
-        case '4':
-            alert('Jarrones');
-            break;
-        case '5':
-            alert('Hoyas');
-            break;
-        case '6':
-            alert( 'Esculturas');
-            break;
+//Funciones para mostrar los productos
+function Producto( nombre, precio ){
 
-        default:
-            alert('Ese producto no existe');
-            break
+        this.nombre = nombre;
+        this.precio = precio;
+
+        this.descuento = function(){
+            this.precioConDescuento = this.precio * 0.25;
+            alert('El precio con descuento queda en: ' + '$' + this.precioConDescuento)
+        }
     }
-    productos = prompt('Coloque un número del 1 al 10, para seleccionar su producto');
-}
 
+const producto1 = new Producto ('Platos', 25000);
+const producto2 = new Producto ('Tazas', 15000);
+const producto3 = new Producto ('Macetas', 30000);
+const producto4 = new Producto ('jarrones', 20000);
+const producto5 = new Producto ('Mates', 10000);
+const producto6 = new Producto ('Esculturas', 40000);
 
+console.log( producto1 );
+console.log( producto1.nombre );
 
