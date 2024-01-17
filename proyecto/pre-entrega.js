@@ -43,25 +43,43 @@ for (let i=0; i<cantidad; i++){
     console.log ('posición ' + i + ': ' + carrito [i]. nombre);
 }
 
-//Buscar un elemento en el carrito
+//Buscar una categoría en el carrito
 carrito.forEach ((item) => {
     console.log (item.nombre.toUpperCase())
 });
 
-let buscar = prompt ('Busca tu producto');
+let buscar = prompt ('Busca tu categoría de productos');
 
-const encontrados = carrito.find ((item) => item.nombre.toLowerCase() === buscar.toLowerCase());
+const encontrados = carrito.find ((item) => item.categoria.toLowerCase() === buscar.toLowerCase());
 
 if (encontrados){
-    alert ('Se encontró el siguiente producto: ' + encontrados.nombre)
+    alert ('Se encontró la siguiente categoría: ' + encontrados.categoria)
 }
 else {
-    alert ('No se ha encontrado el producto ' + buscar)
+    alert ('Esa categoría no existe ' + buscar)
 } 
+
+//Busqueda por nombres en el carrito
+class Objeto {
+    constructor (carrito){
+        this.carrito = carrito;
+    }
+
+    getProductbyName (nombre){
+        const name = this.carrito.filter (item => item.nombre.toLowerCase().includes (nombre.toLowerCase()));
+        return name;
+    } 
+}
+
+const libro = new Objeto (carrito);
+const elementos = libro.getProductbyName('t');
+
+console.table(elementos);
+
 
 //Agrega un elemento al carrito
 while (confirm ('¿Deseas agregar otro producto al carrito?')){
-    producto = prompt ('Indica tu producto ');
+    producto = prompt ('Indica tu producto');
     carrito.push (producto);
 }
 
@@ -76,4 +94,5 @@ while (confirm ('¿Deseas quitar un elemento del carrito?')){
     carrito.splice (3,1);
     console.table (carrito);
 }
+
 
