@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body{
+    background-color: #F6F3EF;
+    background: url(./media/portada.jpg);
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    color: #A6493F;
+}
+
+.portadaIzquierda {
+    height: 800px;
+    width: 500px;
+}
+.portadaDerecha {
+    height: 300px;
+    width: 200px;
+}

@@ -1,9 +1,11 @@
 //Solicitar nombre al usuario para darle la bienvenida
-let usuario = prompt ('Ingrese su nombre de usuario');
-let mensaje = 'Hola ' + usuario + ' ' + 'bienvenido/a a nuestro sitio web de cerámica';
+const usuario = prompt ('Ingrese su nombre de usuario');
+let mensaje = 'Bienvenido/a ' + usuario + ' ' + 'a nuestro sitio web de cerámica';
 
 console.log (mensaje);
 alert (mensaje);
+
+
 
 //Mostrar los productos que estan en oferta
 function Producto (nombre, precio){
