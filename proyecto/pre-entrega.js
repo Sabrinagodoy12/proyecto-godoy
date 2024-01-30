@@ -22,34 +22,33 @@ const producto4 = new Producto ('Mates', 10000);
 console.log (producto1, producto2, producto3, producto4);
 
 //Lista de todos los producos
-// const contenedor = document.querySelector ('#card-productos');
+const contenedor = document.querySelector ('#card-productos');
 
-// const carrito = [
-//     {nombre: 'Platos', categoria: 'Cocina', precio: 25000, img: './media/img-plato7.jpg'},
-//     {nombre: 'Tazas', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
-//     {nombre: 'Mates', categoria: 'Cocina', precio: 10000, img: './media/img-mate3.jpg'},
-//     {nombre: 'Bowls', categoria: 'Cocina', precio: 20000, img: './media/img-bowl3.jpg'},
-//     {nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'},
-//     {nombre: 'Macetas', categoria: 'Jardín', precio: 30000, img: './media/img-maceta2.jpg'},
-//     {nombre: 'Soporte de Velas', categoria: 'Hogar', precio: 10000, img: './media/img-vela2.jpg'},
-//     {nombre: 'Ollas', categoria: 'Cocina', precio: 50000, img: './media/img-olla.jpg'}
-// ];
-
-// for (let i=0; i<carrito.length; i++){
-//     let elemento =  carrito[i];
-//     console.log(elemento);
-
-//     contenedor.innerHTML += //HTML
-//     `<div class="card">
-//     <div class="card-image">
-//     <img src="${carrito.img}" class="imagen-card">
-//     </div>
-//    <div class="card-body">
-//         <h4>${carrito.nombre}</h4>
-//        <p>${carrito.precio}</p>
-//     </div>`;
-// }
-
+const productoInicio = [
+        {nombre: 'Platos', categoria: 'Cocina', precio: 25000, img: './media/img-plato7.jpg'},
+        {nombre: 'Tazas', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
+        {nombre: 'Mates', categoria: 'Cocina', precio: 10000, img: './media/img-mate3.jpg'},
+        {nombre: 'Bowls', categoria: 'Cocina', precio: 20000, img: './media/img-bowl3.jpg'},
+        {nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'},
+        // {nombre: 'Macetas', categoria: 'Jardín', precio: 30000, img: './media/img-maceta2.jpg'},
+        // {nombre: 'Soporte de Velas', categoria: 'Hogar', precio: 10000, img: './media/img-vela2.jpg'},
+        // {nombre: 'Ollas', categoria: 'Cocina', precio: 50000, img: './media/img-olla.jpg'}
+    ];
+    
+    for (let i=0; i<productoInicio.length; i++){
+        let elemento =  productoInicio[i];
+        console.log(elemento);
+    
+        contenedor.innerHTML += //HTML
+        `<div class="card">
+        <div class="card-image">
+        <img src="${elemento.img}" class="imagen-card">
+        </div>
+       <div class="card-body">
+            <h4>${elemento.nombre}</h4>
+           <p class="texto-card">$${elemento.precio}</p>
+        </div>`;
+    }
 console.table (carrito)
 let cantidad = carrito.length; 
 
