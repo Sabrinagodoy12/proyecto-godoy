@@ -1,11 +1,6 @@
 //Solicitar nombre al usuario para darle la bienvenida
 const usuario = prompt ('Ingrese su nombre de usuario');
-let mensaje = 'Bienvenido/a ' + usuario + ' ' + 'a nuestro sitio web de cerámica';
-
-console.log (mensaje);
-alert (mensaje);
-
-
+titulo.innerText = `Bienvenido/a ${usuario}`;
 
 //Mostrar los productos que estan en oferta
 function Producto (nombre, precio){
@@ -27,19 +22,36 @@ const producto4 = new Producto ('Mates', 10000);
 console.log (producto1, producto2, producto3, producto4);
 
 //Lista de todos los producos
-const carrito = [
-    {nombre: 'Platos', categoria: 'Cocina', precio: 25000},
-    {nombre: 'Tazas', categoria: 'Cocina', precio: 15000},
-    {nombre: 'Mates', categoria: 'Cocina', precio: 10000},
-    {nombre: 'Bowls', categoria: 'Cocina', precio: 20000},
-    {nombre: 'Escultura', categoria: 'Hogar', precio: 35000},
-    {nombre: 'Macetas', categoria: 'Jardín', precio: 30000},
-    {nombre: 'Soporte de Velas', categoria: 'Hogar', precio: 10000},
-    {nombre: 'Ollas', categoria: 'Cocina', precio: 50000},
-];
+// const contenedor = document.querySelector ('#card-productos');
+
+// const carrito = [
+//     {nombre: 'Platos', categoria: 'Cocina', precio: 25000, img: './media/img-plato7.jpg'},
+//     {nombre: 'Tazas', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
+//     {nombre: 'Mates', categoria: 'Cocina', precio: 10000, img: './media/img-mate3.jpg'},
+//     {nombre: 'Bowls', categoria: 'Cocina', precio: 20000, img: './media/img-bowl3.jpg'},
+//     {nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'},
+//     {nombre: 'Macetas', categoria: 'Jardín', precio: 30000, img: './media/img-maceta2.jpg'},
+//     {nombre: 'Soporte de Velas', categoria: 'Hogar', precio: 10000, img: './media/img-vela2.jpg'},
+//     {nombre: 'Ollas', categoria: 'Cocina', precio: 50000, img: './media/img-olla.jpg'}
+// ];
+
+// for (let i=0; i<carrito.length; i++){
+//     let elemento =  carrito[i];
+//     console.log(elemento);
+
+//     contenedor.innerHTML += //HTML
+//     `<div class="card">
+//     <div class="card-image">
+//     <img src="${carrito.img}" class="imagen-card">
+//     </div>
+//    <div class="card-body">
+//         <h4>${carrito.nombre}</h4>
+//        <p>${carrito.precio}</p>
+//     </div>`;
+// }
 
 console.table (carrito)
-let cantidad = carrito.length;
+let cantidad = carrito.length; 
 
 for (let i=0; i<cantidad; i++){
     console.log ('posición ' + i + ': ' + carrito [i]. nombre);
@@ -96,5 +108,3 @@ while (confirm ('¿Deseas quitar un elemento del carrito?')){
     carrito.splice (3,1);
     console.table (carrito);
 }
-
-
