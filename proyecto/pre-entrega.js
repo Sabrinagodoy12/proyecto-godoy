@@ -5,10 +5,18 @@ const card = document.querySelector ('.card');
 const subtitulo = document.querySelector ('.subtitulo');
 const texto = document.querySelector ('p');
 const contenedor = document.querySelector ('#card-productos');
+const inputNombre = document.querySelector('#nombre');
+
 
 //Solicitar nombre al usuario para darle la bienvenida
-const usuario = prompt ('Ingrese su nombre de usuario');
-titulo.innerText = `Bienvenido/a ${usuario}`;
+function login(){
+    let nombre = inputNombre.value;
+    titulo.innerText = `Bienvenido/a ${nombre}`
+    console.log(nombre);
+}
+
+// const usuario = prompt ('Ingrese su nombre de usuario');
+// titulo.innerText = `Bienvenido/a ${usuario}`;
 
 //Mostrar los productos que estan en oferta
 function Producto (nombre, precio){
@@ -36,13 +44,10 @@ const productoInicio = [
         {nombre: 'Mates', categoria: 'Cocina', precio: 10000, img: './media/img-mate3.jpg'},
         {nombre: 'Bowls', categoria: 'Cocina', precio: 20000, img: './media/img-bowl3.jpg'},
         {nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'},
-        // {nombre: 'Macetas', categoria: 'Jardín', precio: 30000, img: './media/img-maceta2.jpg'},
-        // {nombre: 'Soporte de Velas', categoria: 'Hogar', precio: 10000, img: './media/img-vela2.jpg'},
-        // {nombre: 'Ollas', categoria: 'Cocina', precio: 50000, img: './media/img-olla.jpg'}
     ];
     
     for (let i=0; i<productoInicio.length; i++){
-        let elemento =  productoInicio[i];
+        let elemento = productoInicio[i];
         console.log(elemento);
     
         contenedor.innerHTML += //HTML
