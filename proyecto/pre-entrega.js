@@ -1,3 +1,11 @@
+//Queryselector
+const productos = document.querySelector ('#productos');
+const titulo = document.querySelector('h1');
+const card = document.querySelector ('.card');
+const subtitulo = document.querySelector ('.subtitulo');
+const texto = document.querySelector ('p');
+const contenedor = document.querySelector ('#card-productos');
+
 //Solicitar nombre al usuario para darle la bienvenida
 const usuario = prompt ('Ingrese su nombre de usuario');
 titulo.innerText = `Bienvenido/a ${usuario}`;
@@ -22,8 +30,6 @@ const producto4 = new Producto ('Mates', 10000);
 console.log (producto1, producto2, producto3, producto4);
 
 //Lista de todos los producos
-const contenedor = document.querySelector ('#card-productos');
-
 const productoInicio = [
         {nombre: 'Platos', categoria: 'Cocina', precio: 25000, img: './media/img-plato7.jpg'},
         {nombre: 'Tazas', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
@@ -46,9 +52,11 @@ const productoInicio = [
         </div>
        <div class="card-body">
             <h4>${elemento.nombre}</h4>
+            <i class='bx bx-cart bx-md'  ></i>
            <p class="texto-card">$${elemento.precio}</p>
-        </div>`;
+            </div>`;
     }
+    
 console.table (carrito)
 let cantidad = carrito.length; 
 

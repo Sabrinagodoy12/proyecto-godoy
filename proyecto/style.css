@@ -8,6 +8,12 @@ body{
     font-family: "Playfair Display", serif;
     color: #A6493F;
 }
+
+.bodyProductos{
+    background: none;
+    background-color: #EBE5DC;
+}
+
 h2{
     font-size: 3rem;
 }
@@ -57,14 +63,17 @@ h4{
 .container{
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
-    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 3rem;
  
 }
  .card{
   border: 1px solid #A6493F;
   border-radius: 5px;
-  height: 23rem;
+  height: 23.5rem;
+  margin: 1rem;
   background-color: #F6F3EF;
 } 
 
@@ -74,11 +83,17 @@ h4{
 }
 
 .texto-card{
-    margin-top: -1rem;
-    margin-right: 1rem;
-    text-align: end;
+    margin-top: -2rem;
+    margin-left: 1rem;
+    text-align:start;
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+.bx{
+    margin-top: -10rem;
+    margin-right: -10rem;
+
 }
 
 button{
