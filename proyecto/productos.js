@@ -27,9 +27,15 @@ for (let i=0; i<todosProductos.length; i++){
     <div class="card-image">
     <img src="${elemento.img}" class="imagen-card">
     </div>
-   <div class="card-body">
+    <div class="card-body">
         <h4>${elemento.nombre}</h4>
         <i class='bx bx-cart bx-md'  ></i>
        <p class="texto-card">$${elemento.precio}</p>
         </div>`;
 }
+
+//Parte del carrito
+render (todosProductos);
+
+
+

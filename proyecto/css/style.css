@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-body{
-    background: url(./media/portada.jpg) no-repeat;
-    background-color: #EBE5DC;
-    text-align: center;
-
+*{
+    margin: 0;
     font-family: "Playfair Display", serif;
+}
+body{
+    background: url(../media/portada.jpg) no-repeat; 
+    background-color: #EBE5DC;
     color: #A6493F;
 }
 
@@ -24,10 +25,15 @@ h4{
     margin-top: 0;
 }
 
+a{
+    text-decoration: none;
+    color: #EBE5DC;
+}
+
 /* Sección del navegador */
 nav{
     width: 100%;
-    height: 2.5rem;
+    height: 3rem;
     background-color: #A6493F;
 }
 #iconoNav{
@@ -35,10 +41,13 @@ nav{
     margin-right: -90rem;
     margin-left: 2rem;
 }
+.nav-link{
+    margin-top: 0;
+}
 
 /*Sección para pedir el nombre*/
 .seccionNombre{
-   margin-right: 70rem;
+
 }
 input{
     height: 2rem;
@@ -47,17 +56,24 @@ input{
     margin-left: 1rem;
 }
 
-.botonNombre{
+.botonInput{
     height: 2rem;
     width: 7rem;
     font-size: 1rem;
-    
+}
+
+.advertencia{
+   color: rgb(185, 16, 16);
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 0;
 }
 
 /* Sección de la portada */
 .portada{
     display: grid;
-    grid-template-columns: auto auto auto 400px;
+    grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto;
     grid-template-areas: "titulo titulo titulo titulo"
     "texto texto texto texto"
@@ -66,30 +82,32 @@ input{
 
 #titulo{
     font-size: 5rem;
-    margin-top: 15rem;
+    margin-top: 10rem;
     grid-area: titulo;
-   grid-column: 2/4;
+    margin-left: 22%;
+   
 }
 
 .subtitulo{
     font-size: 3rem;
-    margin-left: 10rem;
-    margin-top: -4rem;
+    margin-left: 30%;
     grid-area: texto;
-    grid-column: 2/4;
+
 }
 
 .texto{
-    margin-top: 7rem;
    height: 300px;
-   width: 300px;
+   width: 30%;
     grid-area: descripcion;
     grid-column-start: 4;
+    margin-left: 63%;
+    margin-top: 5rem;
     text-align: justify;
     font-size: 1.2rem;
 }
 
 /* Sección de las cards */
+
 .container{
     display: flex;
     flex-direction: row;
@@ -99,7 +117,7 @@ input{
     margin: 3rem;
  
 }
- .card{
+ .tarjeta{
   border: 1px solid #A6493F;
   border-radius: 5px;
   height: 23.5rem;
@@ -139,3 +157,13 @@ button{
     border:#F6F3EF;
 }
 
+.boton{
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #EBE5DC;
+    background-color: #A6493F;
+    border-radius: 1rem ;
+    margin-left: 50%;
+}
