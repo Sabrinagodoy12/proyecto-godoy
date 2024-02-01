@@ -12,7 +12,6 @@ const btn2 = document.querySelector ('#btn2');
 let iconoCard ;
 
 
-
 //Solicita el nombre al usuario para darle la bienvenida + cantidad de caracteres que debe poner
 const nombre = localStorage.getItem ('name');
 if (nombre){
@@ -42,6 +41,7 @@ function login(){
 
 inputNombre.addEventListener('blur', ()=>{
     const usuario = inputNombre.value.trim();
+
     if(usuario.length > 20){
         p.innerText = 'El nombre de usuario es demasiado largo';
     }
@@ -84,6 +84,7 @@ const productoInicio = [
     ];
     
 for (let i=0; i<productoInicio.length; i++){
+    
     let elemento = productoInicio[i];
     console.log(elemento);
 
@@ -96,7 +97,7 @@ for (let i=0; i<productoInicio.length; i++){
         <h4>${elemento.nombre}</h4>
         <i class='bx bx-cart bx-md' id='iconoCard'></i>
         <p class="texto-card">$${elemento.precio}</p>
-        </div>`;
+     </div>`;
 }
 
 //Agrega al carrito
@@ -113,6 +114,22 @@ iconoAdd.forEach (iconoCard => {
 function addCarrito (id){
     console.log ('Add');
 }
+
+//Prueba archivo JSON
+const persona ={
+    nombre: 'Sofia',
+    email: 'email@gmail.com'
+}
+const text = JSON.stringify(persona)
+console.log(persona);
+console.log(text);
+
+localStorage.setItem ('persona', text);
+
+const datoString = localStorage.getItem ('persona');
+const Objeto = JSON.parse(datoString);
+
+console.log(Objeto);
 
 //Buscar una categoría en el carrito
 // productoInicio.forEach ((item) => {
@@ -166,17 +183,4 @@ function addCarrito (id){
 //     console.table (productoInicio);
 // }
 
-const persona ={
-    nombre: 'Sofia',
-    email: 'email@gmail.com'
-}
-const text = JSON.stringify(persona)
-console.log(persona);
-console.log(text);
 
-localStorage.setItem ('persona', text);
-
-const datoString = localStorage.getItem ('persona');
-const Objeto = JSON.parse(datoString);
-
-console.log(Objeto);

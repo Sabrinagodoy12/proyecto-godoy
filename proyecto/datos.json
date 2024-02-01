@@ -1,5 +1,9 @@
 {
     "nombre": "Sofia",
     "email": "email@gmail.com",
-    "edad": 27
+    "productos": [
+        {"nombre": "taza"},
+        {"nombre": "plato"},
+        {"nombre": "olla"}
+    ]
 }
