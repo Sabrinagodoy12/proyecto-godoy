@@ -5,8 +5,11 @@ const card = document.querySelector ('.card');
 const subtitulo = document.querySelector ('.subtitulo');
 const texto = document.querySelector ('p');
 const contenedor = document.querySelector ('#card-productos');
-const cartCount = document.querySelector ('#iconoNav');
 const buscador = document.querySelector ('#inputSearch');
+const btnModalCarrito = document.querySelector ('#btnModalCarrito');
+const cartCount = document.querySelector ('cartCount');
+const btnOrder = document.querySelector ('#btnOrder');
+
 
 //todos los productos
 const todosProductos = [
@@ -20,39 +23,60 @@ const todosProductos = [
     {id: 8, nombre: 'Olla mediana', categoria: 'Cocina', precio: 50000, img: './media/img-olla.jpg'}
 ];
 
-for (let i=0; i<todosProductos.length; i++){
-    let elemento = todosProductos[i];
-    console.log(elemento);
+// for (let i=0; i<todosProductos.length; i++){
+//     let elemento = todosProductos[i];
+//     console.log(elemento);
 
+    // contenedor.innerHTML += //HTML
+    // `<div class="card">
+    // <div class="card-image">
+    // <img src="${elemento.img}" class="imagen-card">
+    // </div>
+    // <div class="card-body">
+    //     <h4>${elemento.nombre}</h4>
+    //     <i class='bx bx-cart bx-md btnAdd'></i>
+    //    <p class="texto-card">$${elemento.precio}</p>
+    //     </div>`;
+//}
+
+//Renderiza los productos para que aparezcan las tarjetas
+const renderProducts = (list) => {
+    todosProductos.innerHTML = '';
+
+  list.forEach (product => {
     contenedor.innerHTML += //HTML
     `<div class="card">
     <div class="card-image">
-    <img src="${elemento.img}" class="imagen-card">
+    <img src="${product.img}" class="imagen-card">
     </div>
     <div class="card-body">
-        <h4>${elemento.nombre}</h4>
-        <i class='bx bx-cart bx-md btnAdd'></i>
-       <p class="texto-card">$${elemento.precio}</p>
+        <h4>${product.nombre}</h4>
+        <button id="${product.id} " type="button" class="btnAdd">
+        <i class="fa-solid fa-cart-plus"></i>
+    </button>
+       <p class="texto-card">$${product.precio}</p>
         </div>`;
-}
+  })
+
 
 //Agrega un elemento al carrito
-iconoAdd = document.querySelectorAll ('.btnAdd');
+  const btns = document.querySelectorAll ('.btnAdd');
 
-iconoAdd.forEach (iconoCard => {
-    iconoCard.addEventListener ('click', (evento)=> {
-        console.log (evento.target);
-        const id = evento.target.id;
-        addCarrito (id);
-    })
-});
-
-function addCarrito (id){
-    console.log ('Add');
+  btns.forEach(btn => {
+    btn.addEventListener ('click', addToCart);
+  });
 }
+
+const addToCart = (e) =>{
+    const id = e.target.id;
+
+    const product = todosProductos.find (item => item.id == id);
+    console.table (product);
+}
+
+renderProducts (todosProductos)
 
 //Buscador
 buscador.addEventListener ('input', (event)=> {
     console.log (event.target.value)
 })
-
