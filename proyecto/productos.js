@@ -23,22 +23,6 @@ const todosProductos = [
     {id: 8, nombre: 'Olla mediana', categoria: 'Cocina', precio: 50000, img: './media/img-olla.jpg'}
 ];
 
-// for (let i=0; i<todosProductos.length; i++){
-//     let elemento = todosProductos[i];
-//     console.log(elemento);
-
-    // contenedor.innerHTML += //HTML
-    // `<div class="card">
-    // <div class="card-image">
-    // <img src="${elemento.img}" class="imagen-card">
-    // </div>
-    // <div class="card-body">
-    //     <h4>${elemento.nombre}</h4>
-    //     <i class='bx bx-cart bx-md btnAdd'></i>
-    //    <p class="texto-card">$${elemento.precio}</p>
-    //     </div>`;
-//}
-
 //Renderiza los productos para que aparezcan las tarjetas
 const renderProducts = (list) => {
     todosProductos.innerHTML = '';
@@ -78,5 +62,9 @@ renderProducts (todosProductos)
 
 //Buscador
 buscador.addEventListener ('input', (event)=> {
-    console.log (event.target.value)
+    const search = event.target.value;
+    const filtro = todosProductos.filter( (product) => product.nombre.toLowerCase().includes (search.toLowerCase ()));
+    
+    console.table (filtro);
+    renderProducts(filtro);
 })
