@@ -81,6 +81,11 @@ input{
     height: 2rem;
     width: 7rem;
     font-size: 1rem;
+    margin-top: -1rem;
+}
+
+#btn{
+    margin-left: 7rem;
 }
 
 .advertencia{
@@ -90,6 +95,7 @@ input{
     font-family:'Times New Roman', Times, serif;
     margin-top: 0;
 }
+
 
 /* Sección de la portada */
 .portada{
@@ -126,6 +132,9 @@ input{
     text-align: justify;
     font-size: 1.2rem;
 }
+
+/*Modal*/
+
 
 /* Sección de las cards */
 #btnOrder{

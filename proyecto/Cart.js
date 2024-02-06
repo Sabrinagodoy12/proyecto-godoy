@@ -1,12 +1,9 @@
 //No pude hacer que funcione, podrías ayudarme por favor :C
-const cart = new Cart ();
-
-cartCount.innerText = cart.getCount();
 
 class Cart {
     constructor (list = []){
         this.cart = list;
-        console.log ('Hola desde el constructor')
+        console.log ('Hola')
     }
 
     addToCart (product){

@@ -6,13 +6,13 @@ const subtitulo = document.querySelector ('.subtitulo');
 const texto = document.querySelector ('p');
 const contenedor = document.querySelector ('#card-productos');
 const buscador = document.querySelector ('#inputSearch');
+const modal = document.querySelector ('#exampleModal')
 const btnModalCarrito = document.querySelector ('#btnModalCarrito');
-const cartCount = document.querySelector ('cartCount');
+const cartCount = document.querySelector ('#cartCount');
 const btnOrder = document.querySelector ('#btnOrder');
 
 // const cart = new Cart ();
-
-// cartCount.innerText = cart.getCount();
+// cartCount.innerText = cart.getCount ();
 
 
 //todos los productos
@@ -61,8 +61,8 @@ const addToCart = (e) =>{
     const product = todosProductos.find (item => item.id == id);
     console.table (product);
 
-    cart.addToCart(product);
-    cartCount.innerText = cart.getCount ();
+    cart.addToCart (product);
+
 }
 
 renderProducts (todosProductos)
