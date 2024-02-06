@@ -10,6 +10,10 @@ const btnModalCarrito = document.querySelector ('#btnModalCarrito');
 const cartCount = document.querySelector ('cartCount');
 const btnOrder = document.querySelector ('#btnOrder');
 
+// const cart = new Cart ();
+
+// cartCount.innerText = cart.getCount();
+
 
 //todos los productos
 const todosProductos = [
@@ -25,7 +29,7 @@ const todosProductos = [
 
 //Renderiza los productos para que aparezcan las tarjetas
 const renderProducts = (list) => {
-    todosProductos.innerHTML = '';
+    contenedor.innerHTML = '';
 
   list.forEach (product => {
     contenedor.innerHTML += //HTML
@@ -56,15 +60,37 @@ const addToCart = (e) =>{
 
     const product = todosProductos.find (item => item.id == id);
     console.table (product);
+
+    cart.addToCart(product);
+    cartCount.innerText = cart.getCount ();
 }
 
 renderProducts (todosProductos)
 
-//Buscador
+
+//Buscador de productos
 buscador.addEventListener ('input', (event)=> {
     const search = event.target.value;
     const filtro = todosProductos.filter( (product) => product.nombre.toLowerCase().includes (search.toLowerCase ()));
     
     console.table (filtro);
     renderProducts(filtro);
+})
+
+//Ordenar por precios
+btnOrder.addEventListener ('click', () => {
+    console.log ('Ordenando');
+
+    todosProductos.sort ( (a,b) => {
+        if (a.precio < b.precio){
+            return -1
+        }
+        if (a.precio > b.precio){
+            return 1
+        }
+        return 0
+    })
+
+    renderProducts(todosProductos);
+    btnOrder.setAttribute('disabled', true)
 })

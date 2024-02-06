@@ -22,6 +22,8 @@ h2{
 h4{
     font-size: 1.5rem;
     margin-top: -0.5rem;
+    color: #A6493F;
+    font-weight: 700;
 }
 
 a{
@@ -160,6 +162,7 @@ input{
     text-align:start;
     font-size: 1.2rem;
     font-weight: 600;
+    color: #A6493F;
 }
 
 .bx{
