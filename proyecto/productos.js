@@ -79,7 +79,6 @@ buscador.addEventListener ('input', (event)=> {
 
 //Ordenar por precios
 btnOrder.addEventListener ('click', () => {
-    console.log ('Ordenando');
 
     todosProductos.sort ( (a,b) => {
         if (a.precio < b.precio){
